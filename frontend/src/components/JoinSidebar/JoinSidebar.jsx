@@ -2,9 +2,25 @@ import React from "react"
 import PropTypes from "prop-types"
 import "./JoinSidebar.scss"
 
+import Logo from "../Logo"
+
 const JoinSidebar = props => (
   <div className="JoinSidebarWrapper">
-    Test content
+    <div className="LogoWrapper">
+      <Logo />
+    </div>
+    <div className="ContentWrapper">
+      <h1>
+        Learn to build better UI,
+        <br />
+        piece-by-piece.
+      </h1>
+      <p>Weekly design briefs give you the tools you need to begin your journey in UI design</p>
+      <div className="EmailCapture">
+        
+      </div>
+    </div>
+    <div className="FooterWrapper">Footer Content</div>
   </div>
 )
 

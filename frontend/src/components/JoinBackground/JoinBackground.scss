@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.JoinBackgroundWrapper{
+    background: #4776e6; /* fallback color */
+    background-image: url("../../images/desktop-join-bg.png"); /* fallback image */
+    background-image: url("../../images/desktop-join-bg.png"), linear-gradient(#4776e6, #8e54e9); /* image + gradient */
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    min-height: $join-page-min-height;
+}
