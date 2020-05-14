@@ -1,17 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react"
+import PropTypes from "prop-types"
 import "./JoinBackground.scss"
 
-const JoinBackground = (props) => (
-  <div className="JoinBackgroundWrapper"></div>
-);
+const JoinBackground = props => <div className="JoinBackgroundWrapper"></div>
 
 JoinBackground.propTypes = {
-  // bla: PropTypes.string,
-};
+	// bla: PropTypes.string,
+}
 
 JoinBackground.defaultProps = {
-  // bla: 'test',
-};
+	// bla: 'test',
+}
 
-export default JoinBackground;
+export default JoinBackground

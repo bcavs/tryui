@@ -1,59 +1,58 @@
 @import "../../styles/variables.scss";
 
 .JoinSidebarWrapper {
-  background-color: white;
-  padding: 0 15px;
-  width: 35%;
-  min-width: 325px;
-  height: 100vh;
-  min-height: $join-page-min-height;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-template-areas:
-  "logo"
-  "content"
-  "footer";
-  -webkit-box-shadow: 4px 0px 6px 0px rgba(0,0,0,0.1);
-  -moz-box-shadow: 4px 0px 6px 0px rgba(0,0,0,0.1);
-  box-shadow: 4px 0px 6px 0px rgba(0,0,0,0.1);
-  .LogoWrapper {
-    grid-area: logo;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 0 auto;
-  }
-  .ContentWrapper {
-    grid-area: content;
-    text-align: center;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    width:85%;
-    min-width:325px;
-    margin: 0 auto;
-    h1 {
-      font-size: 1.5em;
-      margin: 0;
-    }
-    .EmailCapture{
-        background-color: #b6b6b6;
-        width:85%;
-        height:50px;
-        border-radius: 6px;
-    }
-  }
-  .FooterWrapper {
-    grid-area: footer;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
+	background-color: white;
+	padding: 0 15px;
+	z-index: 2;
+	flex: 2;
+	min-width: 325px;
+	height: 100vh;
+	min-height: $join-page-min-height;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-areas:
+		"logo"
+		"content"
+		"footer";
+	-webkit-box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
+	.LogoWrapper {
+		grid-area: logo;
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		margin: 0 auto;
+	}
+	.ContentWrapper {
+		grid-area: content;
+		text-align: center;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		width: 85%;
+		min-width: 325px;
+		margin: 0 auto;
+		h1 {
+			font-size: 1.5em;
+			margin: 0;
+		}
+		.EmailCapture {
+			background-color: #b6b6b6;
+			width: 85%;
+			height: 50px;
+			border-radius: 6px;
+		}
+	}
+	.FooterWrapper {
+		grid-area: footer;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		color: #bdbdbd;
+	}
 }

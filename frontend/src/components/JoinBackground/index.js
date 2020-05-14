@@ -1,3 +1,3 @@
-import JoinBackground from './JoinBackground';
+import JoinBackground from "./JoinBackground"
 
-export default JoinBackground;
+export default JoinBackground

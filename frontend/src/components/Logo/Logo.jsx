@@ -7,11 +7,11 @@ import logo from "../../images/logo.svg"
 const Logo = props => <img alt="TryUI Logo" src={logo} className="logo" />
 
 Logo.propTypes = {
-  // bla: PropTypes.string,
+	// bla: PropTypes.string,
 }
 
 Logo.defaultProps = {
-  // bla: 'test',
+	// bla: 'test',
 }
 
 export default Logo
