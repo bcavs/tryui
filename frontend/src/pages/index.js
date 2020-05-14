@@ -15,11 +15,13 @@ const styles = {
 }
 
 const IndexPage = () => (
-	<div className="body" style={styles.body}>
+	<>
 		<SEO title="Join" />
-		<JoinSidebar />
-		<JoinBackground />
-	</div>
+		<div className="body" style={styles.body}>
+			<JoinSidebar />
+			<JoinBackground />
+		</div>
+	</>
 )
 
 export default IndexPage
