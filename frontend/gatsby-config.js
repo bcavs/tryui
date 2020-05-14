@@ -15,6 +15,14 @@ module.exports = {
 			},
 		},
 		`gatsby-transformer-sharp`,
+		{
+			resolve: "gatsby-plugin-react-svg",
+			options: {
+				rule: {
+					include: `${__dirname}/src/images` // See below to configure properly
+				}
+			}
+		}
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-manifest`,

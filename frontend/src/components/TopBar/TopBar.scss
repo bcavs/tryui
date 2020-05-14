@@ -25,9 +25,15 @@
         }
         .SocialWrapper{
             padding-right:$side-padding;
-            img{
+            svg{
                 width:35px;
                 margin: 5px;
+                &:hover{
+                    .fill{
+                        fill:red;
+                    }
+                    cursor: pointer;
+                }
             }
         }
     }

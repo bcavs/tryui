@@ -3,8 +3,11 @@ import PropTypes from "prop-types"
 import "./Logo.scss"
 
 import logo from "../../images/logo.svg"
+import CustomSVG from "../../images/CustomSVG"
 
-const Logo = props => <img alt="TryUI Logo" src={logo} className="logo" />
+const Logo = props => (
+	<CustomSVG name="Logo" className="logo"/>
+)
 
 Logo.propTypes = {
 	// bla: PropTypes.string,

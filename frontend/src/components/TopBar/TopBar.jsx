@@ -1,23 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import "./TopBar.scss"
 
 import Logo from "../Logo"
-import Facebook from "../../images/facebook-circle.svg"
-import Instagram from "../../images/instagram-circle.svg"
-import Twitter from "../../images/twitter-circle.svg"
-
+import CustomSVG from '../../images/CustomSVG'
 
 const TopBar = (props) => (
   <div className="TopBarWrapper">
     <div className="Container">
       <div className="LogoWrapper">
-        <Logo />
+        <Logo/>
       </div>
       <div className="SocialWrapper">
-        <img alt="TryUI Facebook" src={Facebook} className="SocialIcon" />
-        <img alt="TryUI Instagram" src={Instagram} className="SocialIcon" />
-        <img alt="TryUI Twitter" src={Twitter} className="SocialIcon" />
+        <CustomSVG name="Facebook" />
+        <CustomSVG name="Instagram"/>
+        <CustomSVG name="Twitter" />
       </div>
     </div>
   </div>
