@@ -1,0 +1,18 @@
+{
+    "name": "TryUI",
+    "private": true,
+    "description": "Scripts for the TryUI app",
+    "version": "0.1.0",
+    "author": "Ben Cavenagh <cavenagh.ben@gmail.com>",
+    "dependencies": {},
+    "devDependencies": {
+        "concurrently": "^5.2.0",
+        "http-server": "^0.12.3"
+    },
+    "license": "MIT",
+    "scripts": {
+        "dev": "concurrently \"npm run dev-servers\" \"npm run open-browsers\" ",
+        "dev-servers": "concurrently \"cd frontend && gatsby develop -p 2222\" \"cd backend && npm run develop\"",
+        "open-browsers": "concurrently \"open http://localhost:2222\" \"open http://localhost:1337/admin/auth/login\""
+    }
+}
