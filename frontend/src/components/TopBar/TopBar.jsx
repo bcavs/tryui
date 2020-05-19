@@ -28,8 +28,3 @@ TopBar.defaultProps = {
 };
 
 export default TopBar;
-
-
-
-
-

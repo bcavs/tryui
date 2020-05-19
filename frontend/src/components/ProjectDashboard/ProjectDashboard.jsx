@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from 'prop-types';
 import "./ProjectDashboard.scss";
 
@@ -9,6 +10,28 @@ const ProjectDashboard = (props) => (
     <TopBar/>
     <div className="Dashboard">
       DASH
+      <StaticQuery
+        query={graphql`
+                query {
+                  allStrapiProjects {
+                    edges {
+                      node {
+                        id
+                      }
+                    }
+                  }
+                }
+              `}
+        render={data =>
+          data.allStrapiProjects.edges.map((project, i) => {
+            return (
+              <li key={project.node.id}>
+                {project.node.id}
+              </li>
+            )
+          })
+        }
+      />
     </div>
   </div>
 );

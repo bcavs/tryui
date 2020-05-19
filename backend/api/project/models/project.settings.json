@@ -9,7 +9,7 @@
     "timestamps": true
   },
   "attributes": {
-    "PojectName": {
+    "ProjectName": {
       "type": "string"
     }
   }
