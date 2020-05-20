@@ -5,10 +5,12 @@ import ProjectDashboard from "../components/ProjectDashboard"
 
 import "../styles/global.scss"
 
-const ProjectPage = () => (
+const ProjectPage = ({pageContext}) => 
+(
     <>
+        {console.log("Context: ", pageContext)}
         <SEO title="Project" />
-        <ProjectDashboard/>
+        <ProjectDashboard project={pageContext.project}/>
     </>
 )
 

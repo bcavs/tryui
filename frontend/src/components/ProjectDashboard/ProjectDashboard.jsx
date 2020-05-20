@@ -7,31 +7,10 @@ import TopBar from '../TopBar';
 
 const ProjectDashboard = (props) => (
   <div className="ProjectDashboardWrapper">
+    {console.log("Props: ", props)}
     <TopBar/>
     <div className="Dashboard">
       DASH
-      <StaticQuery
-        query={graphql`
-                query {
-                  allStrapiProjects {
-                    edges {
-                      node {
-                        id
-                      }
-                    }
-                  }
-                }
-              `}
-        render={data =>
-          data.allStrapiProjects.edges.map((project, i) => {
-            return (
-              <li key={project.node.id}>
-                {project.node.id}
-              </li>
-            )
-          })
-        }
-      />
     </div>
   </div>
 );

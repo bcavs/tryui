@@ -33,20 +33,28 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-source-strapi`,
+			resolve: `gatsby-source-contentful`,
 			options: {
-				apiURL: process.env.API_URL,
-				queryLimit: 1000, // Default to 100
-				contentTypes: [`projects`],
-				//If using single types place them in this array.
-				// singleTypes: [`home-page`, `contact`],
-				// Possibility to login with a strapi user, when content types are not publically available (optional).
-				loginData: {
-					identifier: "",
-					password: "",
-				},
+				spaceId: `is3qjjtq787t`,
+				// Learn about environment variables: https://gatsby.dev/env-vars
+				accessToken: `${process.env.CONTENTFUL_DELIVERY_API}`,
 			},
 		},
+		// {
+		// 	resolve: `gatsby-source-strapi`,
+		// 	options: {
+		// 		apiURL: process.env.API_URL,
+		// 		queryLimit: 1000, // Default to 100
+		// 		contentTypes: [`projects`],
+		// 		//If using single types place them in this array.
+		// 		// singleTypes: [`home-page`, `contact`],
+		// 		// Possibility to login with a strapi user, when content types are not publically available (optional).
+		// 		loginData: {
+		// 			identifier: "",
+		// 			password: "",
+		// 		},
+		// 	},
+		// },
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline
 		// `gatsby-plugin-offline`,
