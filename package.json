@@ -11,8 +11,7 @@
     },
     "license": "MIT",
     "scripts": {
-        "dev": "concurrently \"npm run dev-servers\" \"npm run open-browsers\" ",
-        "dev-servers": "concurrently \"cd frontend && gatsby develop -p 2222\" \"cd backend && npm run develop\"",
-        "open-browsers": "concurrently \"open http://localhost:2222\" \"open http://localhost:1337/admin/auth/login\""
+        "develop": "concurrently \"cd frontend && gatsby develop -p 2222\" \"open http://localhost:2222\""
     }
 }
+
