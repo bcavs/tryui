@@ -1,3 +1,3 @@
-import ProjectDashboard from './ProjectDashboard';
+import ProjectDashboard from "./ProjectDashboard"
 
-export default ProjectDashboard;
+export default ProjectDashboard

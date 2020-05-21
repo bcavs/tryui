@@ -1,30 +1,30 @@
-import React from 'react';
+import React from "react"
 import "./TopBar.scss"
 
 import Logo from "../Logo"
-import CustomSVG from '../../images/CustomSVG'
+import CustomSVG from "../../images/CustomSVG"
 
-const TopBar = (props) => (
-  <div className="TopBarWrapper">
-    <div className="Container">
-      <div className="LogoWrapper">
-        <Logo/>
-      </div>
-      <div className="SocialWrapper">
-        <CustomSVG name="Facebook" />
-        <CustomSVG name="Instagram"/>
-        <CustomSVG name="Twitter" />
-      </div>
-    </div>
-  </div>
-);
+const TopBar = props => (
+	<div className="TopBarWrapper">
+		<div className="Container">
+			<div className="LogoWrapper">
+				<Logo />
+			</div>
+			<div className="SocialWrapper">
+				<CustomSVG name="Facebook" />
+				<CustomSVG name="Instagram" />
+				<CustomSVG name="Twitter" />
+			</div>
+		</div>
+	</div>
+)
 
 TopBar.propTypes = {
-  // bla: PropTypes.string,
-};
+	// bla: PropTypes.string,
+}
 
 TopBar.defaultProps = {
-  // bla: 'test',
-};
+	// bla: 'test',
+}
 
-export default TopBar;
+export default TopBar
