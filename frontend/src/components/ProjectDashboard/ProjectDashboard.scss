@@ -5,11 +5,12 @@
 	width: 100vw;
 	display: flex;
 	flex-flow: column;
+	background-color: #f2f2f2;
 	.dashboard-container {
 		max-width: $container-max-width;
 		padding: $side-padding;
-		background-color: #f2f2f2;
-        flex: 1;
+		flex: 1;
+		margin: 0 auto;
 		.dashboard {
             display: flex;
             flex-flow: column;
