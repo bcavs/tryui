@@ -14,4 +14,3 @@
         "develop": "concurrently \"cd frontend && gatsby develop -p 2222\" \"open http://localhost:2222\""
     }
 }
-
