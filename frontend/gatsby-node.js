@@ -7,9 +7,13 @@ exports.createPages = async ({ graphql, actions }) => {
 				projects: allContentfulProject {
 					edges {
 						node {
-							id
 							slug
 							projectName
+							colors
+							projectDetails {
+								projectDetails
+								json
+							}
 						}
 					}
 				}

@@ -82,10 +82,10 @@ $logo-contianer-size: 250px;
 						}
 					}
 					.project-header-info-bottom {
-						.category-badge-container {
+						.tag-badge-container {
 							display: flex;
 							flex-flow: row;
-							.category-badge {
+							.tag-badge {
 								padding: 5px 15px;
 								margin-right: 10px;
 								border-radius: 6px;
@@ -98,6 +98,7 @@ $logo-contianer-size: 250px;
 			}
 			.project-details {
 				flex: 1;
+				margin-top: 25px;
 			}
 		}
 	}
