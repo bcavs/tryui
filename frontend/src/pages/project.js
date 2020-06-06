@@ -7,7 +7,6 @@ import "../styles/global.scss"
 
 const ProjectPage = ({ pageContext }) => (
 	<>
-		{console.log("Context: ", pageContext)}
 		<SEO title="Project" />
 		<ProjectDashboard project={pageContext.project} />
 	</>

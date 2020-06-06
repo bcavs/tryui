@@ -23,7 +23,6 @@ const TagBadge = props => (
 )
 
 const InspirationCard = props => {
-	console.log(props)
 	return (
 		<div className="inspiration-card">
 			<div className="inspiration-image-link">
@@ -57,7 +56,6 @@ const renderColorChips = colors => {
 }
 
 const ProjectDashboard = props => {
-	console.log("Project: ", props.project)
 	//Check if project is not null/undefined
 	return props.project !== null ? (
 		//Render the dashboard
@@ -99,7 +97,6 @@ const ProjectDashboard = props => {
 									<div className="tag-badge-container">
 										{/* Map the tags and create a badge with their info */}
 										{props.project.tags.map((tag, i) => {
-											console.log("Tag: ", tag)
 											return <TagBadge {...tag} />
 										})}
 									</div>
@@ -127,7 +124,6 @@ const ProjectDashboard = props => {
 							<div className="inspiration-card-container">
 								{/* Map the inspirations and create a card with their info */}
 								{props.project.inspirations.map((inspo, i) => {
-									console.log("Inspo: ", inspo)
 									return <InspirationCard {...inspo} />
 								})}
 							</div>
