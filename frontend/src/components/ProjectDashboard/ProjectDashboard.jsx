@@ -3,9 +3,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import "./ProjectDashboard.scss"
 
-import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 
 import TopBar from "../TopBar"
 
@@ -24,7 +22,42 @@ const TagBadge = props => (
 	</div>
 )
 
+const InspirationCard = props => {
+	console.log(props)
+	return (
+		<div className="inspiration-card">
+			<div className="inspiration-image-link">
+				<a href={props?.imageLink ?? "#"}>
+					<img
+						src={
+							props.image?.file?.url ??
+							"https://via.placeholder.com/400x300"
+						}
+					/>
+				</a>
+			</div>
+			<h5 className="inspiration-credit-line">
+				Credit:{" "}
+				<a
+					className="inspiration-author-link"
+					href={props?.authorLink ?? "#"}
+				>
+					{props?.author ?? "{Author name missing}"}
+				</a>
+			</h5>
+		</div>
+	)
+}
+
+const renderColorChips = colors => {
+	let chips = colors.map((color, index) => (
+		<ColorChip color={color} key={index} />
+	))
+	return chips
+}
+
 const ProjectDashboard = props => {
+	console.log("Project: ", props.project)
 	//Check if project is not null/undefined
 	return props.project !== null ? (
 		//Render the dashboard
@@ -34,34 +67,74 @@ const ProjectDashboard = props => {
 				<div className="dashboard">
 					<div className="project-header">
 						<div className="logo-container">
+							{/* Check if the url exists otherwise display placeholder logo */}
 							<img
-								src={require("../../images/placeholder-company-logo.png")}
+								src={
+									props.project?.logo?.file?.url ??
+									require("../../images/placeholder-company-logo.png")
+								}
 							/>
 						</div>
 						<div className="project-header-info">
 							<div className="project-header-info-top">
-								<h3>Project ##</h3>
-								<h1>{props.project.projectName}</h1>
+								<h3>
+									Project #
+									{props.project?.projectId ?? "{Missing ID}"}
+								</h3>
+								<h1>
+									{/* Optional chaining (?.) with nullish coalescing (??) to determine if projectName exists --
+									 if it doesn't then display fallback text */}
+									{props.project?.projectName ??
+										"{Missing Project Name}"}
+								</h1>
 								<div className="color-chip-container">
-									<ColorChip color="#FBD17F" />
-									<ColorChip color="#3D90E3" />
-									<ColorChip color="#164E87" />
+									{/* Send colors to render function if colors exist otherwise send blank array */}
+									{renderColorChips(
+										props.project?.colors ?? []
+									)}
 								</div>
 							</div>
 							<div className="project-header-info-bottom">
-								<div className="tag-badge-container">
-									<TagBadge tag="Tag 1" />
-									<TagBadge tag="Tag 2" />
-								</div>
+								{props.project.tags ? (
+									<div className="tag-badge-container">
+										{/* Map the tags and create a badge with their info */}
+										{props.project.tags.map((tag, i) => {
+											console.log("Tag: ", tag)
+											return <TagBadge {...tag} />
+										})}
+									</div>
+								) : (
+									""
+								)}
 							</div>
 						</div>
 					</div>
 					<div className="project-details">
+						<h3 className="project-details-heading">
+							Project Details
+						</h3>
 						{/* Renders the rich text from Contentful */}
 						{documentToReactComponents(
 							props.project.projectDetails.json
 						)}
 					</div>
+					{/* Check if there are inspirations */}
+					{props.project.inspirations ? (
+						<div className="inspiration-container">
+							<h3 className="inspiration-container-header">
+								Inspiration Pieces
+							</h3>
+							<div className="inspiration-card-container">
+								{/* Map the inspirations and create a card with their info */}
+								{props.project.inspirations.map((inspo, i) => {
+									console.log("Inspo: ", inspo)
+									return <InspirationCard {...inspo} />
+								})}
+							</div>
+						</div>
+					) : (
+						""
+					)}
 				</div>
 			</div>
 		</div>

@@ -1,16 +1,19 @@
 {
-    "name": "TryUI",
-    "private": true,
-    "description": "Scripts for the TryUI app",
-    "version": "0.1.0",
-    "author": "Ben Cavenagh <cavenagh.ben@gmail.com>",
-    "dependencies": {},
-    "devDependencies": {
-        "concurrently": "^5.2.0",
-        "http-server": "^0.12.3"
-    },
-    "license": "MIT",
-    "scripts": {
-        "develop": "concurrently \"cd frontend && gatsby develop -p 2222\" \"open http://localhost:2222\""
-    }
+  "name": "TryUI",
+  "private": true,
+  "description": "Scripts for the TryUI app",
+  "version": "0.1.0",
+  "author": "Ben Cavenagh <cavenagh.ben@gmail.com>",
+  "dependencies": {
+    "open": "^7.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "http-server": "^0.12.3"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "cd frontend && gatsby develop -p 2222",
+    "dev-open": "concurrently \"cd frontend && gatsby develop -p 2222\" \"open-cli http://localhost:2222\""
+  }
 }

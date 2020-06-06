@@ -8,11 +8,30 @@ exports.createPages = async ({ graphql, actions }) => {
 					edges {
 						node {
 							slug
+							projectId
 							projectName
 							colors
 							projectDetails {
-								projectDetails
 								json
+							}
+							logo {
+								file {
+									url
+								}
+							}
+							tags {
+								tag
+							}
+							inspirations {
+								name
+								author
+								authorLink
+								image {
+									file {
+										url
+									}
+								}
+								imageLink
 							}
 						}
 					}

@@ -4,8 +4,7 @@
 $logo-contianer-size: 250px;
 
 .project-dashboard-wrapper {
-	height: 100vh;
-	width: 100vw;
+	min-height: 100vh;
 	display: flex;
 	flex-flow: column;
 	background-color: #f2f2f2;
@@ -99,6 +98,60 @@ $logo-contianer-size: 250px;
 			.project-details {
 				flex: 1;
 				margin-top: 25px;
+			}
+			.inspiration-container {
+				.inspiration-card-container {
+					display: flex;
+					flex-flow: row;
+					flex-wrap: wrap;
+					.inspiration-card {
+						margin: 0 35px 0 0;
+						.inspiration-image-link {
+							position: relative;
+							width: 400px;
+							height: 300px;
+							background-color: wheat;
+							-webkit-box-shadow: 0px 4px 4px 0px
+								rgba(0, 0, 0, 0.1);
+							-moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+							box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+							border-radius: 6px;
+							cursor: pointer;
+							&:after {
+								transition: all 0.2s;
+								content: "";
+								border-radius: 6px;
+							}
+							&:hover:after {
+								content: "";
+								background-color: rgba(0, 0, 0, 0.1);
+								width: 100%;
+								height: 100%;
+								z-index: 2;
+								position: absolute;
+								top: 0;
+								left: 0;
+								pointer-events: none;
+							}
+						}
+						img {
+							width: 100%;
+							height: 100%;
+							border-radius: 6px;
+						}
+						.inspiration-credit-line {
+							color: $gray;
+							margin: 10px 0 0 0;
+							.inspiration-author-link {
+								color: $gray;
+								transition: all 0.3s;
+								&:hover {
+									color: black;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
