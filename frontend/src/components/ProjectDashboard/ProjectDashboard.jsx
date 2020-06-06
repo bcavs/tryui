@@ -1,6 +1,6 @@
 import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
+// import { Link, StaticQuery, graphql } from "gatsby"
+// import PropTypes from "prop-types"
 import "./ProjectDashboard.scss"
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -8,30 +8,33 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import TopBar from "../TopBar"
 
 //Used to display the colors on the project dashboard
-const ColorChip = props => (
-	<div className="color-chip">
-		<div className="dot" style={{ backgroundColor: props.color }} />
-		{props.color}
-	</div>
-)
+const ColorChip = props => {
+	return (
+		<div className="color-chip">
+			<div className="dot" style={{ backgroundColor: props.color }} />
+			{props.color}
+		</div>
+	)
+}
 
 //Used to display the tag bades on the project dahsboard
 const TagBadge = props => (
-	<div className="tag-badge">
+	<div className="tag-badge" key={props.index}>
 		<p>{props.tag}</p>
 	</div>
 )
 
 const InspirationCard = props => {
 	return (
-		<div className="inspiration-card">
+		<div className="inspiration-card" key={props.index}>
 			<div className="inspiration-image-link">
-				<a href={props?.imageLink ?? "#"}>
+				<a href={props?.imageLink ?? "#"} target="_blank">
 					<img
 						src={
 							props.image?.file?.url ??
 							"https://via.placeholder.com/400x300"
 						}
+						alt="Inspiration Piece"
 					/>
 				</a>
 			</div>
@@ -40,6 +43,7 @@ const InspirationCard = props => {
 				<a
 					className="inspiration-author-link"
 					href={props?.authorLink ?? "#"}
+					target="_blank"
 				>
 					{props?.author ?? "{Author name missing}"}
 				</a>
@@ -71,6 +75,7 @@ const ProjectDashboard = props => {
 									props.project?.logo?.file?.url ??
 									require("../../images/placeholder-company-logo.png")
 								}
+								alt="Company Logo"
 							/>
 						</div>
 						<div className="project-header-info">
@@ -97,7 +102,13 @@ const ProjectDashboard = props => {
 									<div className="tag-badge-container">
 										{/* Map the tags and create a badge with their info */}
 										{props.project.tags.map((tag, i) => {
-											return <TagBadge {...tag} />
+											return (
+												<TagBadge
+													{...tag}
+													index={`tag-${i}`}
+													key={`tag-${i}`}
+												/>
+											)
 										})}
 									</div>
 								) : (
@@ -124,7 +135,13 @@ const ProjectDashboard = props => {
 							<div className="inspiration-card-container">
 								{/* Map the inspirations and create a card with their info */}
 								{props.project.inspirations.map((inspo, i) => {
-									return <InspirationCard {...inspo} />
+									return (
+										<InspirationCard
+											{...inspo}
+											index={`inspo-${i}`}
+											key={`inspo-${i}`}
+										/>
+									)
 								})}
 							</div>
 						</div>
