@@ -101,7 +101,7 @@ const ProjectDashboard = props => {
 								{props.project.tags ? (
 									<div className="tag-badge-container">
 										{/* Map the tags and create a badge with their info */}
-										{props.project.tags.map((tag, i) => {
+										{props.project?.tags.map((tag, i) => {
 											return (
 												<TagBadge
 													{...tag}
