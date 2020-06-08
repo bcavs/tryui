@@ -98,7 +98,7 @@ const ProjectDashboard = props => {
 								</div>
 							</div>
 							<div className="project-header-info-bottom">
-								{props.project.tags ? (
+								{props.project?.tags ? (
 									<div className="tag-badge-container">
 										{/* Map the tags and create a badge with their info */}
 										{props.project?.tags.map((tag, i) => {
@@ -123,18 +123,18 @@ const ProjectDashboard = props => {
 						</h3>
 						{/* Renders the rich text from Contentful */}
 						{documentToReactComponents(
-							props.project.projectDetails.json
+							props.project?.projectDetails.json
 						)}
 					</div>
 					{/* Check if there are inspirations */}
-					{props.project.inspirations ? (
+					{props.project?.inspirations ? (
 						<div className="inspiration-container">
 							<h3 className="inspiration-container-header">
 								Inspiration Pieces
 							</h3>
 							<div className="inspiration-card-container">
 								{/* Map the inspirations and create a card with their info */}
-								{props.project.inspirations.map((inspo, i) => {
+								{props.project?.inspirations.map((inspo, i) => {
 									return (
 										<InspirationCard
 											{...inspo}
