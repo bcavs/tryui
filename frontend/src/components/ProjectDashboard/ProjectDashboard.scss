@@ -13,6 +13,10 @@ $logo-contianer-size: 250px;
 		padding: 15px;
 		flex: 1;
 		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 6fr 2fr;
+		grid-template-rows: auto;
+		column-gap: 75px;
 		.dashboard {
 			display: flex;
 			flex-flow: column;

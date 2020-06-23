@@ -6,6 +6,7 @@ import "./ProjectDashboard.scss"
 import TopBar from "../TopBar"
 import InspirationCard from "../InspirationCard"
 import ProjectDashboardHeader from "../ProjectDashboardHeader"
+import ProjectsTimeline from "../ProjectsTimeline"
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -59,6 +60,7 @@ const ProjectDashboard = props => {
 						""
 					)}
 				</div>
+				<ProjectsTimeline currentProjectId={props.project?.projectId} />
 			</div>
 		</div>
 	) : (
