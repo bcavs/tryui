@@ -13,7 +13,7 @@ h3 {
 }
 .responsive-square {
 	position: relative;
-	width: 50%;
+	//Add a width to the element using this class
 	&:after {
 		content: "";
 		display: block;

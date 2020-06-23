@@ -4,6 +4,9 @@
 .project-header {
 	display: flex;
 	flex-flow: column;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
 	.project-title {
 		text-align: center;
 		h1 {
@@ -18,8 +21,34 @@
 		}
 	}
 	.project-logo {
-		margin: 10px auto 20px;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		width: 50%;
 		max-width: 200px;
+		.logo-img-overlay {
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			&:after {
+				content: "";
+				width: 100%;
+				height: 100%;
+				display: block;
+				pointer-events: none;
+				top: 0;
+				left: 0;
+				transition: 0.2s all;
+				border-radius: $image-border-radius;
+			}
+			// background-color: red;
+			&:hover:after {
+				background-color: rgba(0, 0, 0, 0.35);
+			}
+			&:hover {
+				cursor: pointer;
+			}
+		}
 		.logo-img {
 			position: absolute;
 			width: 100%;
@@ -30,7 +59,7 @@
 			-webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
 			-moz-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
 			box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
-			border-radius: 15px;
+			border-radius: $image-border-radius;
 		}
 	}
 
@@ -38,7 +67,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		width: 100%;
 		margin-top: 20px;
 	}
 	.tag-badge-container {
@@ -55,6 +83,37 @@
 			p {
 				margin: 0;
 			}
+		}
+	}
+}
+
+@include mq("tablet") {
+	.project-header {
+		display: grid;
+		grid-template-areas:
+			"logo top-content"
+			"logo none"
+			"logo bottom-content";
+		grid-template-columns: minmax(auto, 250px) auto;
+		grid-template-rows: auto auto 50px;
+		justify-items: start;
+		.project-logo {
+			grid-area: logo;
+			margin-top: 0;
+			margin-bottom: 0;
+			width: 100%;
+		}
+		.project-title {
+			text-align: left;
+			grid-area: top-content;
+		}
+		.tag-badge-container {
+			grid-area: content;
+		}
+		.color-chip-container {
+			grid-area: bottom-content;
+			margin-top: 0;
+			align-self: flex-end;
 		}
 	}
 }

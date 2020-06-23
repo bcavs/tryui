@@ -5,14 +5,12 @@ import "./InspirationCard.scss"
 const InspirationCard = props => {
 	return (
 		<div className="inspiration-card" key={props.index}>
-			{/* <div> */}
 			<a
 				className="inspiration-image-link"
 				href={props?.imageLink ?? "#"}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<div className="overlay" />
 				<img
 					src={
 						props.image?.file?.url ??
@@ -21,7 +19,6 @@ const InspirationCard = props => {
 					alt="Inspiration Piece"
 				/>
 			</a>
-			{/* </div> */}
 			<h5 className="inspiration-credit-line">
 				Credit:{" "}
 				<a

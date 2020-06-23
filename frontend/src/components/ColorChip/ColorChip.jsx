@@ -6,8 +6,9 @@ import "./ColorChip.scss"
 const ColorChip = props => {
 	return (
 		<div className="color-chip">
-			<div className="dot" style={{ backgroundColor: props.color }} />
-			{props.color}
+			{/* <div className="dot" style={{ backgroundColor: props.color }} /> */}
+			<div className="block" style={{ backgroundColor: props.color }} />
+			<p className="hex-text">{props.color}</p>
 		</div>
 	)
 }

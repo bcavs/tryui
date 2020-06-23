@@ -32,149 +32,17 @@ $logo-contianer-size: 250px;
 				display: flex;
 				flex-wrap: wrap;
 			}
+			.inspiration-container-header {
+				.see-more-inspirations {
+					color: $primary;
+					font-size: 14px;
+					margin-left: 10px;
+					transition: 0.2s all;
+					&:hover {
+						color: darken($primary, 25%);
+					}
+				}
+			}
 		}
-		// .project-header {
-		// 	width: 100%;
-		// 	display: flex;
-		// 	flex-flow: row;
-		// 	flex-wrap: wrap;
-		// 	height: $logo-contianer-size;
-		// 	flex: 1;
-		// 	display: grid;
-		// 	grid-template-rows: 150px 3fr 3fr 3fr;
-		// 	grid-template-columns: auto;
-		// 	grid-template-areas:
-		// 		"logo"
-		// 		"header-info";
-		// 	.logo-container {
-		// 		min-width: $logo-contianer-size;
-		// 		flex: 1;
-		// 		height: 100%;
-		// 		margin-right: 20px;
-		// 		img {
-		// 			background-color: white;
-		// 			-webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
-		// 			-moz-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
-		// 			box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
-		// 			border-radius: 15px;
-		// 		}
-		// 	}
-		// 	.project-header-info {
-		// 		grid-area: header-info;
-		// 		display: flex;
-		// 		flex-flow: column;
-		// 		height: 100%;
-		// 		justify-content: space-between;
-		// 		padding: 0 25px;
-		// 		flex: 4;
-		// }
-		// 					p {
-		// 						margin: 0;
-		// 					}
-		// 					.project-header-info-top {
-		// 						h1 {
-		// 							margin: 0;
-		// 							font-size: 2.5em;
-		// 						}
-		// 						h3 {
-		// 							text-transform: uppercase;
-		// 							color: $gray;
-		// 							margin: 0;
-		// 							font-size: 1em;
-		// 						}
-		// 						.color-chip-container {
-		// 							display: flex;
-		// 							width: 100%;
-		// 							padding: 10px 0 0 0;
-		// 							.color-chip {
-		// 								margin-right: 25px;
-		// 								display: flex;
-		// 								justify-content: center;
-		// 								align-items: center;
-		// 								font-size: 16px;
-		// 								font-weight: bold;
-		// 								.dot {
-		// 									width: 25px;
-		// 									height: 25px;
-		// 									border-radius: 50%;
-		// 									margin: 0 5px 0 0;
-		// 								}
-		// 							}
-		// 						}
-		// 					}
-		// 					.project-header-info-bottom {
-		// 						.tag-badge-container {
-		// 							display: flex;
-		// 							flex-flow: row;
-		// 							.tag-badge {
-		// 								padding: 5px 15px;
-		// 								margin-right: 10px;
-		// 								border-radius: 6px;
-		// 								background-color: $light-gray;
-		// 								font-size: 14px;
-		// 							}
-		// 						}
-		// 					}
-		// 				}
-		// 			}
-		// 			.project-details {
-		// 				flex: 1;
-		// 				margin-top: 25px;
-		// 			}
-		// 			.inspiration-container {
-		// 				.inspiration-card-container {
-		// 					display: flex;
-		// 					flex-flow: row;
-		// 					flex-wrap: wrap;
-		// 					.inspiration-card {
-		// 						margin: 0 35px 0 0;
-		// 						.inspiration-image-link {
-		// 							position: relative;
-		// 							max-width: 400px;
-		// 							max-height: 300px;
-		// 							background-color: wheat;
-		// 							-webkit-box-shadow: 0px 4px 4px 0px
-		// 								rgba(0, 0, 0, 0.1);
-		// 							-moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-		// 							box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-		// 							border-radius: 6px;
-		// 							cursor: pointer;
-		// 							&:after {
-		// 								transition: all 0.2s;
-		// 								content: "";
-		// 								border-radius: 6px;
-		// 							}
-		// 							&:hover:after {
-		// 								content: "";
-		// 								background-color: rgba(0, 0, 0, 0.1);
-		// 								width: 100%;
-		// 								height: 100%;
-		// 								z-index: 2;
-		// 								position: absolute;
-		// 								top: 0;
-		// 								left: 0;
-		// 								pointer-events: none;
-		// 							}
-		// 						}
-		// 						img {
-		// 							width: 100%;
-		// 							height: 100%;
-		// 							border-radius: 6px;
-		// 						}
-		// 						.inspiration-credit-line {
-		// 							color: $gray;
-		// 							margin: 10px 0 0 0;
-		// 							.inspiration-author-link {
-		// 								color: $gray;
-		// 								transition: all 0.3s;
-		// 								&:hover {
-		// 									color: black;
-		// 								}
-		// 							}
-		// 						}
-		// 					}
-		// 				}
-		// }
-		// }
 	}
 }

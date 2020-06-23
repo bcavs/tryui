@@ -24,7 +24,6 @@ const ProjectDashboard = props => {
 						colors={props.project?.colors}
 						tags={props.project?.tags}
 					/>
-					<hr />
 					<div className="project-details">
 						<h3 className="project-details-heading">
 							Project Details
@@ -38,7 +37,10 @@ const ProjectDashboard = props => {
 					{props.project?.inspirations ? (
 						<div className="inspiration-container">
 							<h3 className="inspiration-container-header">
-								Inspiration Pieces
+								Inspiration Pieces{" "}
+								<a className="see-more-inspirations" href="">
+									See more
+								</a>
 							</h3>
 							<div className="inspiration-card-container">
 								{/* Map the inspirations and create a card with their info */}

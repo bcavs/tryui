@@ -2,7 +2,7 @@
 
 .TopBarWrapper {
 	width: 100%;
-	background-color: white;
+	background-color: $top-bar-color;
 	height: $top-bar-height;
 	-webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
