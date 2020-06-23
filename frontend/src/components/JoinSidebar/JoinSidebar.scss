@@ -1,30 +1,62 @@
 @import "../../styles/variables.scss";
-
+@import "../../styles/mixins.scss";
 .JoinSidebarWrapper {
 	background-color: white;
-	padding: 0 15px;
+	padding: 0;
 	z-index: 2;
 	flex: 2;
 	min-width: 325px;
-	height: 100vh;
+	min-height: 100vh;
 	min-height: $join-page-min-height;
 	display: grid;
+	grid-template-rows: 150px 3fr 3fr 3fr;
 	grid-template-columns: auto;
-	grid-template-rows: 1fr 2fr 1fr;
 	grid-template-areas:
 		"logo"
+		"mobile-image"
 		"content"
 		"footer";
-	-webkit-box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
-	box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
+	// Remove mobile image on tablet and make shadow on right side rather than bottom
+	@include mq("tablet") {
+		padding: 0 15px;
+		grid-template-rows: 1fr 2fr 1fr;
+		grid-template-areas:
+			"logo"
+			"content"
+			"footer";
+		-webkit-box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 4px 0px 6px 0px rgba(0, 0, 0, 0.1);
+	}
 	.LogoWrapper {
 		grid-area: logo;
-		width: 50%;
+		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
 		margin: 0 auto;
+		-webkit-box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
+		z-index: 3;
+		@include mq("tablet") {
+			box-shadow: none;
+		}
+	}
+	.MobileImage {
+		grid-area: mobile-image;
+		background: #4776e6; /* fallback color */
+		background-image: url("../../images/desktop-join-bg.png"); /* fallback image */
+		background-image: url("../../images/desktop-join-bg.png"),
+			linear-gradient(#4776e6, #8e54e9); /* image + gradient */
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+		min-height: 250px;
+		//Hide on tablet and above
+		@include mq("tablet") {
+			display: none;
+		}
 	}
 	.ContentWrapper {
 		grid-area: content;
@@ -33,9 +65,15 @@
 		flex-flow: column;
 		justify-content: center;
 		align-items: center;
-		width: 85%;
-		min-width: 325px;
-		margin: 0 auto;
+		width: 100%;
+		padding: 5%;
+		margin: 0px auto;
+		-webkit-box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.1);
+		@include mq("tablet") {
+			box-shadow: none;
+		}
 		h1 {
 			font-size: 1.5em;
 			margin: 0;

@@ -9,6 +9,7 @@ const JoinSidebar = props => (
 		<div className="LogoWrapper">
 			<Logo />
 		</div>
+		<div className="MobileImage" />
 		<div className="ContentWrapper">
 			<h1>
 				Learn to build better UI,

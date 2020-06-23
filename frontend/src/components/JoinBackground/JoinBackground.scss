@@ -1,12 +1,18 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .JoinBackgroundWrapper {
-	flex: 4;
-	background: #4776e6; /* fallback color */
-	background-image: url("../../images/desktop-join-bg.png"); /* fallback image */
-	background-image: url("../../images/desktop-join-bg.png"),
-		linear-gradient(#4776e6, #8e54e9); /* image + gradient */
-	background-size: cover;
-	background-position: center;
-	min-height: $join-page-min-height;
+	display: none;
+	// Don't display unless tablet size or greater
+	@include mq("tablet") {
+		display: block;
+		flex: 4;
+		background: #4776e6; /* fallback color */
+		background-image: url("../../images/desktop-join-bg.png"); /* fallback image */
+		background-image: url("../../images/desktop-join-bg.png"),
+			linear-gradient(#4776e6, #8e54e9); /* image + gradient */
+		background-size: cover;
+		background-position: center;
+		min-height: $join-page-min-height;
+	}
 }
