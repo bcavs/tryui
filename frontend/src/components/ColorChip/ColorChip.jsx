@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import "./ColorChip.scss"
 
 //Used to display the colors on the project dashboard

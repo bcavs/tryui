@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "./ProjectsTimeline.scss"
@@ -44,6 +44,7 @@ const ProjectsTimeline = props => {
 						<Project
 							project={project.node}
 							currentProjectId={props.currentProjectId}
+							key={i}
 						/>
 					)
 				})}

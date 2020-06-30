@@ -39,7 +39,10 @@ const ProjectDashboard = props => {
 						<div className="inspiration-container">
 							<h3 className="inspiration-container-header">
 								Inspiration Pieces{" "}
-								<a className="see-more-inspirations" href="">
+								<a
+									className="see-more-inspirations"
+									href={props.project?.seeMoreInspirationsUrl}
+								>
 									See more
 								</a>
 							</h3>

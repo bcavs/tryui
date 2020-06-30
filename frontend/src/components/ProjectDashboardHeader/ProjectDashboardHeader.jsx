@@ -1,11 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import "../../styles/global.scss"
 import "./ProjectDashboardHeader.scss"
 
-import { AwesomeButton } from "react-awesome-button"
-import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss"
+// import { AwesomeButton } from "react-awesome-button"
+// import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss"
 import ColorChip from "../ColorChip"
 import TagBadge from "../TagBadge"
 
@@ -17,16 +17,15 @@ const renderColorChips = colors => {
 }
 
 const renderPrevNextProjectArrows = (pages, pageId) => {
-	console.log("Pages: ", pages)
-	console.log("Pages length: ", pages.length)
-	console.log("Page ID: ", pageId)
-	console.log("Previous Page: ", pages[pageId - 1])
-	console.log("Current Page: ", pages[pageId])
-	console.log("Next Page: ", pages[pageId + 1])
+	// console.log("Pages: ", pages)
+	// console.log("Pages length: ", pages.length)
+	// console.log("Page ID: ", pageId)
+	// console.log("Previous Page: ", pages[pageId - 1])
+	// console.log("Current Page: ", pages[pageId])
+	// console.log("Next Page: ", pages[pageId + 1])
 	function checkPreviousSpot() {
 		if (parseInt(pageId) > 0) {
 			const prevProject = pages[pageId - 1].node
-			console.log("PREVPROJ: ", prevProject)
 			return (
 				<a
 					href={`/project/${prevProject.slug}`}
@@ -40,18 +39,9 @@ const renderPrevNextProjectArrows = (pages, pageId) => {
 		}
 	}
 	function checkNextSpot() {
-		if (parseInt(pageId) <= pages.length) {
+		if (parseInt(pageId) < pages.length - 1) {
 			const nextProject = pages[pageId + 1].node
-			console.log("NEXTPROJ: ", nextProject)
 			return (
-				// <AwesomeButton
-				// 	href={`/project/${nextProject.slug}`}
-				// 	type="primary"
-				// 	ripple
-				// 	cssModule={AwesomeButtonStyles}
-				// >
-				// 	Test Awesome
-				// </AwesomeButton>
 				<a
 					href={`/project/${nextProject.slug}`}
 					className="next-project-arrow"
