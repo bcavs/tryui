@@ -2,7 +2,6 @@ import React from "react"
 import "./TopBar.scss"
 
 import { AwesomeButtonSocial } from "react-awesome-button"
-import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss"
 
 import Logo from "../Logo"
 // import CustomSVG from "../../images/CustomSVG"
