@@ -3,6 +3,7 @@
 
 .inspiration-card {
 	max-width: 300px;
+	margin: 0 10px 0 0;
 	@include mq("tablet") {
 		margin: 0 35px 0 0;
 	}

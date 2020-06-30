@@ -1,8 +1,11 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import "../../styles/global.scss"
 import "./ProjectDashboardHeader.scss"
 
+import { AwesomeButton } from "react-awesome-button"
+import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss"
 import ColorChip from "../ColorChip"
 import TagBadge from "../TagBadge"
 
@@ -13,56 +16,130 @@ const renderColorChips = colors => {
 	return chips
 }
 
-const ProjectDashboardHeader = props => (
-	<div className="project-header">
-		{/* Check if the url exists otherwise display placeholder logo */}
-		<div className="responsive-square project-logo">
-			<div className="logo-img-overlay" />
-			<img
-				src={
-					props.logo ??
-					require("../../images/placeholder-company-logo.png")
-				}
-				alt="Company Logo"
-				className="logo-img"
-			/>
+const renderPrevNextProjectArrows = (pages, pageId) => {
+	console.log("Pages: ", pages)
+	console.log("Pages length: ", pages.length)
+	console.log("Page ID: ", pageId)
+	console.log("Previous Page: ", pages[pageId - 1])
+	console.log("Current Page: ", pages[pageId])
+	console.log("Next Page: ", pages[pageId + 1])
+	function checkPreviousSpot() {
+		if (parseInt(pageId) > 0) {
+			const prevProject = pages[pageId - 1].node
+			console.log("PREVPROJ: ", prevProject)
+			return (
+				<a
+					href={`/project/${prevProject.slug}`}
+					className="prev-project-arrow"
+				>
+					{"< Prev Project"}
+				</a>
+			)
+		} else {
+			return <div />
+		}
+	}
+	function checkNextSpot() {
+		if (parseInt(pageId) <= pages.length) {
+			const nextProject = pages[pageId + 1].node
+			console.log("NEXTPROJ: ", nextProject)
+			return (
+				// <AwesomeButton
+				// 	href={`/project/${nextProject.slug}`}
+				// 	type="primary"
+				// 	ripple
+				// 	cssModule={AwesomeButtonStyles}
+				// >
+				// 	Test Awesome
+				// </AwesomeButton>
+				<a
+					href={`/project/${nextProject.slug}`}
+					className="next-project-arrow"
+				>
+					{"Next Project >"}
+				</a>
+			)
+		} else {
+			return <div />
+		}
+	}
+	return (
+		<div className="mobile-project-switcher">
+			{checkPreviousSpot()}
+			{checkNextSpot()}
 		</div>
-		<div className="top-content-container">
-			<div className="project-title">
-				<h3>Project #{props.projectId ?? "{Missing ID}"}</h3>
-				<h1>
-					{/* Optional chaining (?.) with nullish coalescing (??) to determine if projectName exists --
-  										 if it doesn't then display fallback text */}
-					{props.projectName ?? "{Missing Project Name}"}
-				</h1>
+	)
+}
+
+const ProjectDashboardHeader = props => {
+	const data = useStaticQuery(graphql`
+		query NextPrevProjectsQuery {
+			allContentfulProject(sort: { fields: [projectId], order: ASC }) {
+				edges {
+					node {
+						projectName
+						projectId
+						slug
+					}
+				}
+			}
+		}
+	`)
+	return (
+		<div className="project-header">
+			{/* Check if the url exists otherwise display placeholder logo */}
+			<div className="responsive-square project-logo">
+				<div className="logo-img-overlay" />
+				<img
+					src={
+						props.logo ??
+						require("../../images/placeholder-company-logo.png")
+					}
+					alt="Company Logo"
+					className="logo-img"
+				/>
 			</div>
-			{props.tags ? (
-				<div className="tag-badge-container">
-					{/* Map the tags and create a badge with their info */}
-					{props.tags.map((tag, i) => {
-						return (
-							<TagBadge
-								{...tag}
-								index={`tag-${i}`}
-								key={`tag-${i}`}
-							/>
-						)
-					})}
+			<div className="top-content-container">
+				<div className="project-title">
+					<h3>Project #{props.projectId ?? "{Missing ID}"}</h3>
+					<h1>
+						{/* Optional chaining (?.) with nullish coalescing (??) to determine if projectName exists --
+  										 if it doesn't then display fallback text */}
+						{props.projectName ?? "{Missing Project Name}"}
+					</h1>
+					{renderPrevNextProjectArrows(
+						data.allContentfulProject.edges,
+						props.projectId ?? -1
+					)}
+				</div>
+				{props.tags ? (
+					<div className="tag-badge-container">
+						{/* Map the tags and create a badge with their info */}
+						{props.tags.map((tag, i) => {
+							return (
+								<TagBadge
+									{...tag}
+									index={`tag-${i}`}
+									key={`tag-${i}`}
+								/>
+							)
+						})}
+					</div>
+				) : (
+					""
+				)}
+			</div>
+			{props.colors ? (
+				<div className="color-chip-container">
+					{/* Send colors to render function if colors exist otherwise send blank array */}
+					{renderColorChips(props.colors ?? [])}
 				</div>
 			) : (
 				""
 			)}
 		</div>
-		{props.colors ? (
-			<div className="color-chip-container">
-				{/* Send colors to render function if colors exist otherwise send blank array */}
-				{renderColorChips(props.colors ?? [])}
-			</div>
-		) : (
-			""
-		)}
-	</div>
-)
+	)
+}
 
 ProjectDashboardHeader.propTypes = {
 	// bla: PropTypes.string,

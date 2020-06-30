@@ -1,6 +1,9 @@
 import React from "react"
 import "./TopBar.scss"
 
+import { AwesomeButtonSocial } from "react-awesome-button"
+import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss"
+
 import Logo from "../Logo"
 import CustomSVG from "../../images/CustomSVG"
 
@@ -11,9 +14,30 @@ const TopBar = props => (
 				<Logo />
 			</div>
 			<div className="SocialWrapper">
-				<CustomSVG name="Facebook" />
-				<CustomSVG name="Instagram" />
-				<CustomSVG name="Twitter" />
+				<AwesomeButtonSocial
+					cssModule={AwesomeButtonStyles}
+					size="icon"
+					type="facebook"
+					url="https://google.com"
+					ripple
+					style={{ marginLeft: "10px" }}
+				></AwesomeButtonSocial>
+				<AwesomeButtonSocial
+					cssModule={AwesomeButtonStyles}
+					size="icon"
+					type="instagram"
+					url="https://google.com"
+					ripple
+					style={{ marginLeft: "10px" }}
+				></AwesomeButtonSocial>
+				<AwesomeButtonSocial
+					cssModule={AwesomeButtonStyles}
+					size="icon"
+					type="twitter"
+					url="https://google.com"
+					ripple
+					style={{ marginLeft: "10px" }}
+				></AwesomeButtonSocial>
 			</div>
 		</div>
 	</div>

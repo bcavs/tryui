@@ -24,16 +24,16 @@
 		}
 		.SocialWrapper {
 			padding-right: $side-padding;
-			svg {
-				width: 35px;
-				margin: 5px;
-				&:hover {
-					.fill {
-						fill: red;
-					}
-					cursor: pointer;
-				}
-			}
+			// svg {
+			// 	width: 35px;
+			// 	margin: 5px;
+			// 	&:hover {
+			// 		.fill {
+			// 			fill: red;
+			// 		}
+			// 		cursor: pointer;
+			// 	}
+			// }
 		}
 	}
 }
