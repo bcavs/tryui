@@ -15,7 +15,6 @@ const TopBar = props => (
 			</div>
 			<div className="SocialWrapper">
 				<AwesomeButtonSocial
-					cssModule={AwesomeButtonStyles}
 					size="icon"
 					type="facebook"
 					url="https://google.com"
@@ -23,7 +22,6 @@ const TopBar = props => (
 					style={{ marginLeft: "10px" }}
 				></AwesomeButtonSocial>
 				<AwesomeButtonSocial
-					cssModule={AwesomeButtonStyles}
 					size="icon"
 					type="instagram"
 					url="https://google.com"
@@ -31,7 +29,6 @@ const TopBar = props => (
 					style={{ marginLeft: "10px" }}
 				></AwesomeButtonSocial>
 				<AwesomeButtonSocial
-					cssModule={AwesomeButtonStyles}
 					size="icon"
 					type="twitter"
 					url="https://google.com"
