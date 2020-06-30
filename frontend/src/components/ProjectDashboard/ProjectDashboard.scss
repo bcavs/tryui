@@ -5,6 +5,8 @@ $logo-contianer-size: 250px;
 
 .project-dashboard-wrapper {
 	min-height: 100vh;
+	width: 100vw;
+	overflow-x: hidden;
 	display: flex;
 	flex-flow: column;
 	background-color: #f2f2f2;
@@ -13,10 +15,12 @@ $logo-contianer-size: 250px;
 		padding: 15px;
 		flex: 1;
 		margin: 0 auto;
-		display: grid;
-		grid-template-columns: 6fr 2fr;
-		grid-template-rows: auto;
-		column-gap: 75px;
+		@include mq("tablet") {
+			display: grid;
+			grid-template-columns: 6fr 2fr;
+			grid-template-rows: auto;
+			column-gap: 75px;
+		}
 		.dashboard {
 			display: flex;
 			flex-flow: column;
