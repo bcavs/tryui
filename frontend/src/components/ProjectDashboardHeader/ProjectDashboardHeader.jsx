@@ -75,10 +75,16 @@ const ProjectDashboardHeader = props => {
 			}
 		}
 	`)
+	console.log(props)
 	return (
 		<div className="project-header">
 			{/* Check if the url exists otherwise display placeholder logo */}
-			<div className="responsive-square project-logo">
+			<a
+				href={"../../images/placeholder-company-logo.png"}
+				download
+				target="_blank"
+				className="responsive-square project-logo"
+			>
 				<div className="logo-img-overlay" />
 				<img
 					src={
@@ -88,7 +94,7 @@ const ProjectDashboardHeader = props => {
 					alt="Company Logo"
 					className="logo-img"
 				/>
-			</div>
+			</a>
 			<div className="top-content-container">
 				<div className="project-title">
 					<h3>Project #{props.projectId ?? "{Missing ID}"}</h3>

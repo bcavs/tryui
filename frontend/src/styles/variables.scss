@@ -1,9 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700&display=swap");
 
+$light-gray: #e7e7e7;
+$gray: #696969;
+
+$purple: #524763;
+$blue: #0575e6;
+
+// Audacious and Vibrant
+$electric-red: #fc4445;
+$shockqua: #3feee6;
+$covfefe: #cafafe;
+
+//Warm and Bold
+$black: #000000;
+$ink: #062f4f;
+$posy: #812772;
+$embers: #b82601;
+
+//THEME
+$primary: $posy;
+
 $open-sans: "Open Sans", sans-serif;
 
 $top-bar-height: 70px;
-$top-bar-color: white;
+$top-bar-color: $primary;
 
 //Join Page Specifics
 $join-page-min-height: 350px;
@@ -14,9 +34,6 @@ $side-padding: 30px;
 
 $image-border-radius: 8px;
 
-$light-gray: #e7e7e7;
-$gray: #696969;
-
-$purple: #524763;
-
-$primary: #0575e6;
+:export {
+	$testExport: #cb492a;
+}

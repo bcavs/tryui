@@ -4,7 +4,9 @@ import "./Logo.scss"
 
 import CustomSVG from "../../images/CustomSVG"
 
-const Logo = props => <CustomSVG name="Logo" className="logo" />
+const Logo = props => (
+	<CustomSVG name="Logo" className="logo" fill={props.fill} />
+)
 
 Logo.propTypes = {
 	// bla: PropTypes.string,

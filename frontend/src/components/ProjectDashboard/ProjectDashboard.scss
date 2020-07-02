@@ -42,12 +42,12 @@ $logo-contianer-size: 250px;
 			}
 			.inspiration-container-header {
 				.see-more-inspirations {
-					color: $primary;
+					color: $blue;
 					font-size: 14px;
 					margin-left: 10px;
 					transition: 0.2s all;
 					&:hover {
-						color: darken($primary, 25%);
+						color: darken($blue, 25%);
 					}
 				}
 			}
