@@ -8,6 +8,7 @@
     "@contentful/rich-text-html-renderer": "^13.4.0",
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "contentful": "^7.14.4",
+    "copy-to-clipboard": "^3.3.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.21.21",
     "gatsby-image": "^2.4.3",
