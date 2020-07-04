@@ -41,7 +41,10 @@ const ProjectDashboard = props => {
 								Inspiration Pieces{" "}
 								<a
 									className="see-more-inspirations"
-									href={props.project?.seeMoreInspirationsUrl}
+									href={
+										props.project?.seeMoreInspirationsUrl ??
+										"https://dribbble.com/"
+									}
 								>
 									See more
 								</a>

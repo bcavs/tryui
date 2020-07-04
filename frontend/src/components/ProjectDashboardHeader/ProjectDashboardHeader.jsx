@@ -8,6 +8,7 @@ import "./ProjectDashboardHeader.scss"
 // import AwesomeButtonStyles from "react-awesome-button/src/styles/styles.scss"
 import ColorChip from "../ColorChip"
 import TagBadge from "../TagBadge"
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa"
 
 import PlaceholderLogo from "../../images/placeholder-company-logo.png"
 
@@ -27,7 +28,8 @@ const renderPrevNextProjectArrows = (pages, pageId) => {
 					href={`/project/${prevProject.slug}`}
 					className="prev-project-arrow"
 				>
-					{"< Prev Project"}
+					<FaArrowAltCircleLeft size={"30px"} />
+					{/* <p>Previous</p> */}
 				</a>
 			)
 		} else {
@@ -42,7 +44,8 @@ const renderPrevNextProjectArrows = (pages, pageId) => {
 					href={`/project/${nextProject.slug}`}
 					className="next-project-arrow"
 				>
-					{"Next Project >"}
+					<FaArrowAltCircleRight size={"30px"} />
+					{/* <p>Next</p> */}
 				</a>
 			)
 		} else {
@@ -90,16 +93,16 @@ const ProjectDashboardHeader = props => {
 			</a>
 			<div className="top-content-container">
 				<div className="project-title">
+					{renderPrevNextProjectArrows(
+						data.allContentfulProject.edges,
+						props.projectId ?? -1
+					)}
 					<h3>Project #{props.projectId ?? "{Missing ID}"}</h3>
 					<h1>
 						{/* Optional chaining (?.) with nullish coalescing (??) to determine if projectName exists --
   										 if it doesn't then display fallback text */}
 						{props.projectName ?? "{Missing Project Name}"}
 					</h1>
-					{renderPrevNextProjectArrows(
-						data.allContentfulProject.edges,
-						props.projectId ?? -1
-					)}
 				</div>
 				{props.tags ? (
 					<div className="tag-badge-container">

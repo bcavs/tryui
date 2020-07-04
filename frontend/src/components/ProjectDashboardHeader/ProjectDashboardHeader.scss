@@ -43,7 +43,15 @@
 			height: 100%;
 			.next-project-arrow,
 			.prev-project-arrow {
-				color: red;
+				font-size: 12px;
+				text-decoration: none;
+				color: $disable-gray;
+				background-color: $light-gray;
+				padding: 10px;
+				border-radius: 5px;
+				p {
+					margin: 0;
+				}
 			}
 		}
 	}

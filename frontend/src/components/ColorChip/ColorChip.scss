@@ -51,7 +51,7 @@ $chip-height: 30px;
 	background-color: $dashboard-background-color;
 	position: relative;
 	z-index: 5;
-	margin: 0;
+	margin: 0 5px 0 0;
 	box-sizing: border-box;
 
 	@include mq("tablet") {
