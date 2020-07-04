@@ -18,35 +18,29 @@ export default function ColorChip(props) {
 	return (
 		<>
 			<div className="color-chip">
-				{
-					/* Logical shortcut for only displaying the 
-			   button if the copy command exists */
-					document.queryCommandSupported("copy") && (
-						<div className="click-to-copy">
-							<div
-								className="click-to-copy-button"
-								style={{ zIndex: 99 }}
-							>
-								<div
-									className="color-chip-slider-animation"
-									style={{
-										backgroundColor: props.color,
-										zIndex: 3,
-									}}
-								/>
-								<button
-									onClick={() => copyToClipboard(props.color)}
-								></button>
-							</div>
-							<p
-								className="color-chip-copy-message"
-								style={{ zIndex: 1 }}
-							>
-								{copySuccess}
-							</p>
-						</div>
-					)
-				}
+				<div className="click-to-copy">
+					<div
+						className="click-to-copy-button"
+						style={{ zIndex: 99 }}
+					>
+						<div
+							className="color-chip-slider-animation"
+							style={{
+								backgroundColor: props.color,
+								zIndex: 3,
+							}}
+						/>
+						<button
+							onClick={() => copyToClipboard(props.color)}
+						></button>
+					</div>
+					<p
+						className="color-chip-copy-message"
+						style={{ zIndex: 1 }}
+					>
+						{copySuccess}
+					</p>
+				</div>
 				<div
 					className="block"
 					style={{ backgroundColor: props.color, zIndex: 2 }}
