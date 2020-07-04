@@ -1,17 +1,14 @@
 import React, { useRef, useState } from "react"
 // import PropTypes from "prop-types"
+import copy from "copy-to-clipboard"
 import "./ColorChip.scss"
 
 //Used to display the colors on the project dashboard
 export default function ColorChip(props) {
 	const [copySuccess, setCopySuccess] = useState("Click to copy")
 	const textAreaRef = useRef(null)
-	function copyToClipboard(e) {
-		textAreaRef.current.select()
-		document.execCommand("copy")
-		// This is just personal preference.
-		// I prefer to not show the the whole text area selected.
-		e.target.focus()
+	function copyToClipboard(color) {
+		copy(color)
 		setCopySuccess("Copied!")
 		setTimeout(function () {
 			setCopySuccess("Click to copy")
@@ -37,7 +34,9 @@ export default function ColorChip(props) {
 										zIndex: 3,
 									}}
 								/>
-								<button onClick={copyToClipboard}></button>
+								<button
+									onClick={() => copyToClipboard(props.color)}
+								></button>
 							</div>
 							<p
 								className="color-chip-copy-message"

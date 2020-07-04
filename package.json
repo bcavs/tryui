@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Ben Cavenagh <cavenagh.ben@gmail.com>",
   "dependencies": {
+    "copy-to-clipboard": "^3.3.1",
     "open": "^7.0.4"
   },
   "devDependencies": {
