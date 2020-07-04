@@ -7,8 +7,10 @@ import "./ProjectsTimeline.scss"
 const Project = ({ project, currentProjectId }) => {
 	const isActive =
 		project.projectId === currentProjectId ? "active" : "inactive"
+	const isFuture =
+		project.projectId > currentProjectId ? "future-project" : ""
 	return (
-		<div className="timeline-project">
+		<div className={`timeline-project ${isFuture}`}>
 			<a
 				className={`timeline-project-link ${isActive}`}
 				href={`/project/${project.slug}`}

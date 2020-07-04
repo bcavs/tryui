@@ -47,13 +47,16 @@
 			.timeline-project-link {
 				text-decoration: none;
 				&:hover {
-					text-decoration: underline;
-					text-decoration-color: black;
+					.timeline-project-name {
+						text-decoration: underline;
+						text-decoration-color: black;
+					}
 				}
 				.timeline-project-id {
 					color: $gray;
 					margin: 0;
 					text-transform: uppercase;
+					font-weight: 700;
 					margin: 0;
 					font-size: 0.75em;
 				}
@@ -67,6 +70,46 @@
 			.active h3,
 			.active p {
 				color: $blue !important;
+				font-weight: 700 !important;
+			}
+			.timeline-project-link.active {
+				&:hover {
+					.timeline-project-name {
+						text-decoration-color: $blue;
+					}
+				}
+			}
+		}
+
+		.future-project {
+			&:not(:first-child):after {
+				background-color: $disable-light-gray;
+			}
+			//Blue dots
+			&:before {
+				background-color: $disable-light-gray;
+			}
+			.timeline-project-link {
+				text-decoration: none;
+				&:hover {
+					.timeline-project-name {
+						text-decoration: underline;
+						text-decoration-color: $disable-gray;
+					}
+				}
+				.timeline-project-id {
+					color: $disable-light-gray;
+					margin: 0;
+					text-transform: uppercase;
+					margin: 0;
+					font-size: 0.75em;
+				}
+				.timeline-project-name {
+					margin: 0;
+					color: $disable-gray;
+					font-weight: 400;
+					font-size: 18px;
+				}
 			}
 		}
 	}

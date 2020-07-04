@@ -9,6 +9,8 @@ import "./ProjectDashboardHeader.scss"
 import ColorChip from "../ColorChip"
 import TagBadge from "../TagBadge"
 
+import PlaceholderLogo from "../../images/placeholder-company-logo.png"
+
 const renderColorChips = colors => {
 	let chips = colors.map((color, index) => (
 		<ColorChip color={color} key={index} />
@@ -17,12 +19,6 @@ const renderColorChips = colors => {
 }
 
 const renderPrevNextProjectArrows = (pages, pageId) => {
-	// console.log("Pages: ", pages)
-	// console.log("Pages length: ", pages.length)
-	// console.log("Page ID: ", pageId)
-	// console.log("Previous Page: ", pages[pageId - 1])
-	// console.log("Current Page: ", pages[pageId])
-	// console.log("Next Page: ", pages[pageId + 1])
 	function checkPreviousSpot() {
 		if (parseInt(pageId) > 0) {
 			const prevProject = pages[pageId - 1].node
@@ -87,10 +83,7 @@ const ProjectDashboardHeader = props => {
 			>
 				<div className="logo-img-overlay" />
 				<img
-					src={
-						props.logo ??
-						require("../../images/placeholder-company-logo.png")
-					}
+					src={props.logo ?? PlaceholderLogo}
 					alt="Company Logo"
 					className="logo-img"
 				/>

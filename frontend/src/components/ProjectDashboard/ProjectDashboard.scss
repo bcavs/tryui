@@ -9,7 +9,7 @@ $logo-contianer-size: 250px;
 	overflow-x: hidden;
 	display: flex;
 	flex-flow: column;
-	background-color: #f2f2f2;
+	background-color: $dashboard-background-color;
 	.dashboard-container {
 		max-width: $container-max-width;
 		padding: 15px;
