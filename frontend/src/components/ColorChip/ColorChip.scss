@@ -51,8 +51,13 @@ $chip-height: 30px;
 	background-color: $dashboard-background-color;
 	position: relative;
 	z-index: 5;
+	margin: 0;
 	box-sizing: border-box;
+
 	@include mq("tablet") {
+		margin: 0px 10px 0 0;
+	}
+	@include mq("tablet-wide") {
 		margin: 0px 20px 0 0;
 	}
 	.click-to-copy {

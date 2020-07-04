@@ -6,8 +6,6 @@ import "./ColorChip.scss"
 export default function ColorChip(props) {
 	const [copySuccess, setCopySuccess] = useState("Click to copy")
 	const textAreaRef = useRef(null)
-	console.log(props)
-
 	function copyToClipboard(e) {
 		textAreaRef.current.select()
 		document.execCommand("copy")
@@ -56,12 +54,11 @@ export default function ColorChip(props) {
 				/>
 				<textarea
 					disabled
+					value={props.color}
 					className="hex-text"
 					style={{ zIndex: 4 }}
 					ref={textAreaRef}
-				>
-					{props.color}
-				</textarea>
+				/>
 			</div>
 		</>
 	)

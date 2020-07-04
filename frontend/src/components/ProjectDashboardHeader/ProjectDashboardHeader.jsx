@@ -71,7 +71,6 @@ const ProjectDashboardHeader = props => {
 			}
 		}
 	`)
-	console.log(props)
 	return (
 		<div className="project-header">
 			{/* Check if the url exists otherwise display placeholder logo */}
@@ -79,6 +78,7 @@ const ProjectDashboardHeader = props => {
 				href={"../../images/placeholder-company-logo.png"}
 				download
 				target="_blank"
+				rel="noopener noreferrer"
 				className="responsive-square project-logo"
 			>
 				<div className="logo-img-overlay" />

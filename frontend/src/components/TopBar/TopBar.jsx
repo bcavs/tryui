@@ -3,8 +3,6 @@ import "./TopBar.scss"
 
 import { AwesomeButtonSocial } from "react-awesome-button"
 
-import variables from "../../styles/variables.scss"
-
 import Logo from "../Logo"
 // import CustomSVG from "../../images/CustomSVG"
 

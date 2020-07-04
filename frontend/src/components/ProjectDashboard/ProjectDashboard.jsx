@@ -12,7 +12,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const ProjectDashboard = props => {
 	//Check if project is not null/undefined
-	console.log(props.project)
 	return props.project !== null && props.project !== undefined ? (
 		//Render the dashboard
 		<div className="project-dashboard-wrapper">
