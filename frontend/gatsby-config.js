@@ -9,6 +9,12 @@ module.exports = {
 		author: `@gatsbyjs`,
 	},
 	plugins: [
+		{
+			resolve: `gatsby-plugin-google-analytics`,
+			options: {
+				trackingId: "UA-171795823-1",
+			},
+		},
 		`gatsby-plugin-sass`,
 		`gatsby-plugin-react-helmet`,
 		{
@@ -40,6 +46,7 @@ module.exports = {
 				accessToken: `${process.env.CONTENTFUL_DELIVERY_API}`,
 			},
 		},
+
 		// {
 		// 	resolve: `gatsby-source-strapi`,
 		// 	options: {
