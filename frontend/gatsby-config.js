@@ -15,6 +15,12 @@ module.exports = {
 				trackingId: "UA-171795823-1",
 			},
 		},
+		{
+			resolve: `gatsby-plugin-google-adsense`,
+			options: {
+				publisherId: `ca-pub-9551657672592083`,
+			},
+		},
 		`gatsby-plugin-sass`,
 		`gatsby-plugin-react-helmet`,
 		{
