@@ -67,6 +67,7 @@ $chip-height: 30px;
 		&:hover {
 			.color-chip-copy-message {
 				top: $chip-height * -1;
+				opacity: 1;
 			}
 		}
 		.click-to-copy-button {
@@ -129,6 +130,7 @@ $chip-height: 30px;
 			transition: 0.2s all;
 			color: $disable-gray;
 			pointer-events: none;
+			opacity: 0;
 		}
 	}
 	.block {

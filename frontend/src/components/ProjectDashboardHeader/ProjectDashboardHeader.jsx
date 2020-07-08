@@ -74,11 +74,12 @@ const ProjectDashboardHeader = props => {
 			}
 		}
 	`)
+	console.log(props)
 	return (
 		<div className="project-header">
 			{/* Check if the url exists otherwise display placeholder logo */}
 			<a
-				href={"../../images/placeholder-company-logo.png"}
+				href={props.logo}
 				download
 				target="_blank"
 				rel="noopener noreferrer"
