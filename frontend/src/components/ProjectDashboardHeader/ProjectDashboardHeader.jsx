@@ -29,7 +29,7 @@ const renderPrevNextProjectArrows = (pages, pageId) => {
 					className="prev-project-arrow"
 				>
 					<FaArrowAltCircleLeft size={"30px"} />
-					{/* <p>Previous</p> */}
+					<p className="arrow-text">Previous Project</p>
 				</a>
 			)
 		} else {
@@ -45,7 +45,7 @@ const renderPrevNextProjectArrows = (pages, pageId) => {
 					className="next-project-arrow"
 				>
 					<FaArrowAltCircleRight size={"30px"} />
-					{/* <p>Next</p> */}
+					<p className="arrow-text">Next Project</p>
 				</a>
 			)
 		} else {
