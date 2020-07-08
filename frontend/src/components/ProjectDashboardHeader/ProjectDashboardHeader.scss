@@ -7,6 +7,7 @@
 	align-items: center;
 	margin-top: 20px;
 	margin-bottom: 30px;
+	position: relative;
 	.top-content-container {
 		width: 100%;
 		display: flex;
@@ -30,33 +31,6 @@
 			color: $gray;
 			margin: 0;
 			font-size: 0.75em;
-		}
-		.mobile-project-switcher {
-			@include mq("tablet") {
-				display: none;
-			}
-			position: absolute;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			width: 100%;
-			height: 100%;
-			.next-project-arrow,
-			.prev-project-arrow {
-				font-size: 12px;
-				text-decoration: none;
-				color: $disable-gray;
-				background-color: $light-gray;
-				padding: 10px;
-				border-radius: 5px;
-				position: relative;
-				.arrow-text {
-					margin: 0;
-					position: absolute;
-					bottom: -75%;
-					left: 0%;
-				}
-			}
 		}
 	}
 	.project-logo {
@@ -111,17 +85,7 @@
 		display: flex;
 		flex-flow: row;
 		justify-content: flex-start;
-		margin-top: 20px;
-		.tag-badge {
-			padding: 5px 15px;
-			margin-right: 10px;
-			border-radius: 6px;
-			background-color: $light-gray;
-			font-size: 14px;
-			p {
-				margin: 0;
-			}
-		}
+		margin-top: 10px;
 	}
 }
 
@@ -152,6 +116,35 @@
 			grid-area: bottom-content;
 			margin-top: 0;
 			align-self: flex-end;
+		}
+	}
+}
+
+.mobile-project-switcher {
+	@include mq("tablet") {
+		display: none;
+	}
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	top: 30%;
+	.next-project-arrow,
+	.prev-project-arrow {
+		font-size: 12px;
+		text-decoration: none;
+		color: $disable-gray;
+		background-color: $light-gray;
+		padding: 10px;
+		border-radius: 5px;
+		position: relative;
+		text-align: center;
+		.arrow-text {
+			margin: 0;
+			position: absolute;
+			bottom: -75%;
+			left: 0%;
 		}
 	}
 }

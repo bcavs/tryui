@@ -91,12 +91,12 @@ const ProjectDashboardHeader = props => {
 					className="logo-img"
 				/>
 			</a>
+			{renderPrevNextProjectArrows(
+				data.allContentfulProject.edges,
+				props.projectId ?? -1
+			)}
 			<div className="top-content-container">
 				<div className="project-title">
-					{renderPrevNextProjectArrows(
-						data.allContentfulProject.edges,
-						props.projectId ?? -1
-					)}
 					<h3>Project #{props.projectId ?? "{Missing ID}"}</h3>
 					<h1>
 						{/* Optional chaining (?.) with nullish coalescing (??) to determine if projectName exists --
