@@ -74,7 +74,6 @@ const ProjectDashboardHeader = props => {
 			}
 		}
 	`)
-	console.log(props)
 	return (
 		<div className="project-header">
 			{/* Check if the url exists otherwise display placeholder logo */}
