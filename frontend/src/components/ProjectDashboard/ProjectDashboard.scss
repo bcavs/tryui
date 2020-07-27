@@ -12,7 +12,7 @@ $logo-contianer-size: 250px;
 	background-color: $dashboard-background-color;
 	.dashboard-container {
 		max-width: $container-max-width;
-		padding: 15px;
+		padding: 15px $side-padding;
 		flex: 1;
 
 		margin: 0 auto;

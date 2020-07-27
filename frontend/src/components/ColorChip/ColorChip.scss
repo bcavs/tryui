@@ -140,6 +140,7 @@ $chip-height: 30px;
 	}
 	.hex-text {
 		background-color: $dashboard-background-color;
+		color: $disable-dark-gray;
 		border: 1px solid $disable-light-gray;
 		border-radius: 0 $border-rad $border-rad 0;
 		height: 100%;
