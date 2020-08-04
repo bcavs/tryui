@@ -2,19 +2,29 @@ import React from "react"
 import "./TopBar.scss"
 
 import { AwesomeButtonSocial } from "react-awesome-button"
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
 
 import Logo from "../Logo"
 // import CustomSVG from "../../images/CustomSVG"
 
 const TopBar = props => {
 	return (
-		<div className="TopBarWrapper">
-			<div className="Container">
-				<div className="LogoWrapper">
+		<div className="top-bar-wrapper">
+			<div className="container">
+				<div className="logo-wrapper">
 					<Logo fill="white" />
 				</div>
-				<div className="SocialWrapper">
-					<AwesomeButtonSocial
+				<div className="social-wrapper">
+					<a className="social-links" href="facebook.com">
+						<FaFacebook size="32" color="white" />
+					</a>
+					<a className="social-links" href="instagram.com">
+						<FaInstagram size="32" color="white" />
+					</a>
+					<a className="social-links" href="twitter.com">
+						<FaTwitter size="32" color="white" />
+					</a>
+					{/* <AwesomeButtonSocial
 						size="icon"
 						type="facebook"
 						url="https://google.com"
@@ -34,7 +44,7 @@ const TopBar = props => {
 						url="https://google.com"
 						ripple
 						style={{ marginLeft: "10px" }}
-					></AwesomeButtonSocial>
+					></AwesomeButtonSocial> */}
 				</div>
 			</div>
 		</div>
