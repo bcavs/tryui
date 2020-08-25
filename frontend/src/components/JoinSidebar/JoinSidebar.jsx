@@ -2,7 +2,7 @@ import React from "react"
 // import PropTypes from "prop-types"
 import "./JoinSidebar.scss"
 
-import Logo from "../Logo"
+import Logo from "../Shared/Logo"
 
 const JoinSidebar = props => (
 	<div className="JoinSidebarWrapper">

@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 // import PropTypes from "prop-types"
-import "../../styles/global.scss"
+import "../../../styles/global.scss"
 import "./ProjectDashboardHeader.scss"
 
 // import { AwesomeButton } from "react-awesome-button"
@@ -10,7 +10,7 @@ import ColorChip from "../ColorChip"
 import TagBadge from "../TagBadge"
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa"
 
-import PlaceholderLogo from "../../images/placeholder-company-logo.png"
+import PlaceholderLogo from "../../../images/placeholder-company-logo.png"
 
 const renderColorChips = colors => {
 	let chips = colors.map((color, index) => (

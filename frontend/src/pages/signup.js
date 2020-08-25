@@ -1,7 +1,8 @@
 import React from "react"
 
 import SEO from "../inc/seo"
-import TopBar from "../components/Shared/TopBar"
+import JoinSidebar from "../components/JoinSidebar"
+import JoinBackground from "../components/JoinBackground/JoinBackground"
 
 import "../styles/global.scss"
 import "react-awesome-button/src/styles/styles.scss"
@@ -24,10 +25,10 @@ const styles = {
 
 const IndexPage = () => (
 	<>
-		<SEO title="Home" />
-		<TopBar />
+		<SEO title="Join" />
 		<div className="body" style={styles.body}>
-			<p>Home</p>
+			<JoinSidebar />
+			<JoinBackground />
 		</div>
 	</>
 )

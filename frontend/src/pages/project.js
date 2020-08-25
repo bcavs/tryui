@@ -1,7 +1,7 @@
 import React from "react"
 
 import SEO from "../inc/seo"
-import ProjectDashboard from "../components/ProjectDashboard"
+import ProjectDashboard from "../components/Shared/ProjectDashboard"
 
 import "../styles/global.scss"
 
