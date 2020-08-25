@@ -3,6 +3,7 @@ import React from "react"
 import SEO from "../inc/seo"
 import TopBar from "../components/HomePage/TopBar"
 import CtaButton from "../components/Shared/CtaButton"
+import EmailCaptureBanner from "../components/Shared/EmailCaptureBanner"
 
 import "../styles/global.scss"
 import "../styles/pages/home.scss"
@@ -35,7 +36,7 @@ const IndexPage = () => (
 		<TopBar />
 		<div className="home-page_hero">
 			<Container className="hero-content-container">
-				<Grid container>
+				<Grid container className="inner-container">
 					<Grid container item xs={12} md={7} alignItems="center">
 						<div className="hero-content">
 							<h1>
@@ -68,6 +69,10 @@ const IndexPage = () => (
 				<div className="gradient-overlay red" />
 			</Container>
 		</div>
+		<EmailCaptureBanner>
+			Don't miss new projects! <br />
+			Get them sent straight to your inbox:
+		</EmailCaptureBanner>
 		<div className="body" style={styles.body}>
 			<p>Home</p>
 		</div>

@@ -1,0 +1,81 @@
+@import "../../../styles/variables.scss";
+.email-capture-banner {
+	background: linear-gradient(90deg, #c7441b 0%, #c12e00 100%);
+	color: white;
+	padding: 40px 0;
+	position: relative;
+	.gradient-overlay {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		pointer-events: none;
+		background: linear-gradient(
+			242.96deg,
+			rgba(199, 141, 27, 0.49) 14.11%,
+			rgba(193, 46, 0, 0) 65.34%
+		);
+	}
+	.content-container {
+		z-index: 2;
+		position: relative;
+		.headline {
+			font-size: 24px;
+		}
+		.email-capture {
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 50px;
+			box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+				0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+				0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
+				0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+				0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
+				0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+			width: 500px;
+
+			input {
+				flex: 1;
+				height: 100%;
+				border-radius: 5px 0 0 5px;
+				border: 2px solid white;
+				background-color: #d3d3d3;
+				padding: 0 40px 0 20px;
+				transition: all 0.15s;
+				font-size: 20px;
+				&:focus {
+					outline: none;
+					border: 2px solid $primary;
+				}
+			}
+			.submit-button {
+				width: 115px;
+				height: 100%;
+				padding: 0 25px;
+				color: white;
+				font-weight: bold;
+				font-size: 20px;
+				border: none;
+				background-color: $primary;
+				position: relative;
+				border-radius: 0 5px 5px 0;
+				&:before {
+					content: "";
+					position: absolute;
+					left: -50px;
+					top: 0;
+					width: 0;
+					height: 0;
+					border-top: 25px solid transparent;
+					border-left: 25px solid transparent;
+					border-bottom: 25px solid $primary;
+					border-right: 25px solid $primary;
+				}
+			}
+		}
+	}
+}
