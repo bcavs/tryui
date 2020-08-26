@@ -1,28 +1,46 @@
 @import "../variables.scss";
+@import "../mixins.scss";
 
 .home-page_hero {
 	background-color: #080812;
 	min-height: 750px;
-	padding-top: $top-bar-height;
+	max-height: calc(100vh - 200px);
+	padding-top: $top-bar-height + 20px;
 	padding-bottom: $top-bar-height;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: $light-purple;
 	position: relative;
+	text-align: center;
+	@include mq("md", min) {
+		text-align: start;
+		padding-top: $top-bar-height;
+	}
 	.hero-content-container {
 		.inner-container {
 			z-index: 2;
 			position: relative;
+			@include mq("md", max) {
+				flex-direction: column-reverse;
+			}
 			.hero-content {
 				h1 {
-					font-size: 40px;
+					font-size: 24px;
 					margin-top: 30px;
+					@include mq("md", min) {
+						font-size: 40px;
+						flex-direction: column-reverse;
+					}
 				}
 				p {
 					color: #797979;
 					margin: 10px 0 25px 0;
-					font-size: 20px;
+					font-size: 18px;
+					@include mq("md", min) {
+						font-size: 20px;
+						flex-direction: column-reverse;
+					}
 				}
 			}
 		}
@@ -52,7 +70,11 @@
 			);
 		}
 		.hero-image {
-			width: 350px;
+			width: 70%;
+			max-width: 350px;
+			@include mq("md", min) {
+				width: 100%;
+			}
 		}
 	}
 }

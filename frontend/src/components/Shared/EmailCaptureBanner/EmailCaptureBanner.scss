@@ -1,4 +1,5 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 .email-capture-banner {
 	background: linear-gradient(90deg, #c7441b 0%, #c12e00 100%);
 	color: white;
@@ -22,58 +23,89 @@
 		z-index: 2;
 		position: relative;
 		.headline {
-			font-size: 24px;
+			font-size: 20px;
+			padding-right: 20px;
+			@include mq("tablet-wide", min) {
+				font-size: 24px;
+			}
+			@include mq("md", max) {
+				text-align: center;
+				padding: 0 0 20px 0;
+			}
 		}
 		.email-capture {
 			margin: 0 auto;
 			display: flex;
+			flex-flow: column;
 			justify-content: center;
 			align-items: center;
-			height: 50px;
-			box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
-				0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
-				0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
-				0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
-				0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
-				0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
-			width: 500px;
+			max-width: 450px;
 
+			@include mq("sm", min) {
+				height: 50px;
+				flex-flow: row;
+				box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+					0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+					0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
+					0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+					0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
+					0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+				max-width: 500px;
+				width: 100%;
+			}
 			input {
 				flex: 1;
 				height: 100%;
-				border-radius: 5px 0 0 5px;
+				border-radius: 5px;
 				border: 2px solid white;
 				background-color: #d3d3d3;
-				padding: 0 40px 0 20px;
+				padding: 15px 10px;
+				width: 100%;
 				transition: all 0.15s;
-				font-size: 20px;
+				font-size: 18px;
 				&:focus {
 					outline: none;
 					border: 2px solid $primary;
 				}
+				@include mq("sm", min) {
+					font-size: 20px;
+					border-radius: 5px 0 0 5px;
+				}
 			}
 			.submit-button {
-				width: 115px;
 				height: 100%;
-				padding: 0 25px;
+				padding: 10px 25px;
 				color: white;
 				font-weight: bold;
 				font-size: 20px;
 				border: none;
 				background-color: $primary;
 				position: relative;
-				border-radius: 0 5px 5px 0;
-				&:before {
-					content: "";
-					position: absolute;
-					left: -50px;
-					top: 0;
-					width: 0;
-					height: 0;
-					border-top: 25px solid transparent;
-					border-left: 25px solid transparent;
-					border-bottom: 25px solid $primary;
-					border-right: 25px solid $primary;
+				border-radius: 5px;
+				align-self: flex-end;
+				margin-top: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				@include mq("sm", min) {
+					width: 115px;
+					border-radius: 0 5px 5px 0;
+					padding: 0 25px;
+					.submit-chevron {
+						display: none;
+					}
+					&:before {
+						content: "";
+						position: absolute;
+						left: -50px;
+						top: 0;
+						width: 0;
+						height: 0;
+						border-top: 25px solid transparent;
+						border-left: 25px solid transparent;
+						border-bottom: 25px solid $primary;
+						border-right: 25px solid $primary;
+					}
 				}
 			}
 		}

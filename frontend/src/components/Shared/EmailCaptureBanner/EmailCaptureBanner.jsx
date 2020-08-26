@@ -2,6 +2,7 @@ import React from "react"
 import "./EmailCaptureBanner.scss"
 
 import { Grid, Container } from "@material-ui/core"
+import { ChevronRight } from "@material-ui/icons"
 
 const EmailCaptureBanner = props => (
 	<div className="email-capture-banner">
@@ -14,7 +15,10 @@ const EmailCaptureBanner = props => (
 				<Grid item xs={12} md={6}>
 					<div className="email-capture">
 						<input placeholder="Email" type="email"></input>
-						<button class="submit-button">Submit</button>
+						<button class="submit-button">
+							<p>Submit</p>{" "}
+							<ChevronRight className="submit-chevron" />
+						</button>
 					</div>
 				</Grid>
 			</Grid>

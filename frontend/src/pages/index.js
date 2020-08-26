@@ -1,18 +1,16 @@
 import React from "react"
+import "../styles/global.scss"
+import "../styles/pages/home.scss"
+import "react-awesome-button/src/styles/styles.scss"
+
+import { Grid, Container } from "@material-ui/core"
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 
 import SEO from "../inc/seo"
 import TopBar from "../components/HomePage/TopBar"
 import CtaButton from "../components/Shared/CtaButton"
 import EmailCaptureBanner from "../components/Shared/EmailCaptureBanner"
 import ViewProjectCard from "../components/HomePage/ViewProjectCard"
-
-import "../styles/global.scss"
-import "../styles/pages/home.scss"
-
-import "react-awesome-button/src/styles/styles.scss"
-
-import { Grid, Container } from "@material-ui/core"
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 
 import HeroImage from "../images/home-hero.png"
 
@@ -31,7 +29,14 @@ const IndexPage = () => (
 		<div className="home-page_hero">
 			<Container className="hero-content-container">
 				<Grid container className="inner-container">
-					<Grid container item xs={12} md={7} alignItems="center">
+					<Grid
+						container
+						item
+						xs={12}
+						md={7}
+						alignItems="center"
+						justify="center"
+					>
 						<div className="hero-content">
 							<h1>
 								Curated project briefs so you can focus on
@@ -76,22 +81,22 @@ const IndexPage = () => (
 			</div>
 			<Container>
 				<Grid container spacing={5} className="projects-grid">
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={6} md={4}>
 						<ViewProjectCard />
 					</Grid>
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={6} md={4}>
 						<ViewProjectCard />
 					</Grid>
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={6} md={4}>
 						<ViewProjectCard />
 					</Grid>
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={6} md={4}>
 						<ViewProjectCard />
 					</Grid>
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={6} md={4}>
 						<ViewProjectCard />
 					</Grid>
-					<Grid item xs={12} md={4}>
+					<Grid item xs={12} sm={6} md={4}>
 						<ViewProjectCard />
 					</Grid>
 				</Grid>
