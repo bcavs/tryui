@@ -1,11 +1,8 @@
 import React from "react"
 import "./TopBar.scss"
 
-import { AwesomeButtonSocial } from "react-awesome-button"
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
-
 import Logo from "../../Shared/Logo"
-// import CustomSVG from "../../images/CustomSVG"
 
 const TopBar = props => {
 	return (
@@ -24,7 +21,7 @@ const TopBar = props => {
 					<a className="social-links" href="twitter.com">
 						<FaTwitter size="32" color="white" />
 					</a>
-					<a className="cta" href="#">
+					<a className="cta" href="/donate">
 						<b>Donate</b>
 					</a>
 				</div>

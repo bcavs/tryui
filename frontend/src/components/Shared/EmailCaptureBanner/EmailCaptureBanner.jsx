@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import "./EmailCaptureBanner.scss"
 
 import { Grid, Container } from "@material-ui/core"

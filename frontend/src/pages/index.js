@@ -74,26 +74,28 @@ const IndexPage = () => (
 					style={{ fontSize: 35, marginTop: "-10px" }}
 				/>
 			</div>
-			<Grid container spacing={5} className="projects-grid">
-				<Grid item xs={12} md={4}>
-					<ViewProjectCard />
+			<Container>
+				<Grid container spacing={5} className="projects-grid">
+					<Grid item xs={12} md={4}>
+						<ViewProjectCard />
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<ViewProjectCard />
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<ViewProjectCard />
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<ViewProjectCard />
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<ViewProjectCard />
+					</Grid>
+					<Grid item xs={12} md={4}>
+						<ViewProjectCard />
+					</Grid>
 				</Grid>
-				<Grid item xs={12} md={4}>
-					<ViewProjectCard />
-				</Grid>
-				<Grid item xs={12} md={4}>
-					<ViewProjectCard />
-				</Grid>
-				<Grid item xs={12} md={4}>
-					<ViewProjectCard />
-				</Grid>
-				<Grid item xs={12} md={4}>
-					<ViewProjectCard />
-				</Grid>
-				<Grid item xs={12} md={4}>
-					<ViewProjectCard />
-				</Grid>
-			</Grid>
+			</Container>
 		</div>
 	</>
 )
