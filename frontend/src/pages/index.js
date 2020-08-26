@@ -4,6 +4,7 @@ import SEO from "../inc/seo"
 import TopBar from "../components/HomePage/TopBar"
 import CtaButton from "../components/Shared/CtaButton"
 import EmailCaptureBanner from "../components/Shared/EmailCaptureBanner"
+import ViewProjectCard from "../components/HomePage/ViewProjectCard"
 
 import "../styles/global.scss"
 import "../styles/pages/home.scss"
@@ -11,6 +12,7 @@ import "../styles/pages/home.scss"
 import "react-awesome-button/src/styles/styles.scss"
 
 import { Grid, Container } from "@material-ui/core"
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 
 import HeroImage from "../images/home-hero.png"
 
@@ -21,14 +23,6 @@ setConfig({
 	showReactDomPatchNotification: false,
 })
 // =======================================================================================
-
-const styles = {
-	body: {
-		width: "100%",
-		height: "100vh",
-		display: "flex",
-	},
-}
 
 const IndexPage = () => (
 	<>
@@ -73,8 +67,33 @@ const IndexPage = () => (
 			Don't miss new projects! <br />
 			Get them sent straight to your inbox:
 		</EmailCaptureBanner>
-		<div className="body" style={styles.body}>
-			<p>Home</p>
+		<div className="body">
+			<div className="projects-header">
+				<h4>PROJECTS</h4>
+				<ArrowDropDownIcon
+					style={{ fontSize: 35, marginTop: "-10px" }}
+				/>
+			</div>
+			<Grid container spacing={5} className="projects-grid">
+				<Grid item xs={12} md={4}>
+					<ViewProjectCard />
+				</Grid>
+				<Grid item xs={12} md={4}>
+					<ViewProjectCard />
+				</Grid>
+				<Grid item xs={12} md={4}>
+					<ViewProjectCard />
+				</Grid>
+				<Grid item xs={12} md={4}>
+					<ViewProjectCard />
+				</Grid>
+				<Grid item xs={12} md={4}>
+					<ViewProjectCard />
+				</Grid>
+				<Grid item xs={12} md={4}>
+					<ViewProjectCard />
+				</Grid>
+			</Grid>
 		</div>
 	</>
 )
