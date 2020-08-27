@@ -12,7 +12,7 @@ const EmailCaptureBanner = props => (
 					<h4 className="headline">{props.children}</h4>
 				</Grid>
 
-				<Grid item xs={12} md={6}>
+				<Grid item xs={12} md={6} justify="center" alignItems="center">
 					<div className="email-capture">
 						<input placeholder="Email" type="email"></input>
 						<button class="submit-button">

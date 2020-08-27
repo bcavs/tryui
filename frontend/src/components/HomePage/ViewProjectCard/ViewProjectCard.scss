@@ -34,5 +34,18 @@
 		font-size: 18px;
 		border: none;
 		border-radius: 5px;
+		transition: all 0.2s;
+		&:hover {
+			cursor: pointer;
+			background-color: darken($primary, 10%);
+			box-shadow: none;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:active {
+			cursor: pointer;
+			background-color: lighten($primary, 5%);
+		}
 	}
 }

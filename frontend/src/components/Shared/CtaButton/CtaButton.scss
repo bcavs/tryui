@@ -10,4 +10,17 @@
 	font-weight: bold;
 	font-size: 20px;
 	text-align: center;
+	transition: all 0.3s;
+	&:hover {
+		cursor: pointer;
+		background-color: darken($primary, 10%);
+		box-shadow: none;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:active {
+		cursor: pointer;
+		background-color: lighten($primary, 5%);
+	}
 }

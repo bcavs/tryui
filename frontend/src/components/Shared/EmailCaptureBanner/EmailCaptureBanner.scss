@@ -3,8 +3,11 @@
 .email-capture-banner {
 	background: linear-gradient(90deg, #c7441b 0%, #c12e00 100%);
 	color: white;
-	padding: 40px 0;
 	position: relative;
+	padding: 25px 0;
+	@include mq("sm", min) {
+		padding: 40px 0;
+	}
 	.gradient-overlay {
 		width: 100%;
 		height: 100%;
@@ -23,7 +26,7 @@
 		z-index: 2;
 		position: relative;
 		.headline {
-			font-size: 20px;
+			font-size: 16px;
 			padding-right: 20px;
 			@include mq("tablet-wide", min) {
 				font-size: 24px;
@@ -40,7 +43,6 @@
 			justify-content: center;
 			align-items: center;
 			max-width: 450px;
-
 			@include mq("sm", min) {
 				height: 50px;
 				flex-flow: row;
@@ -55,29 +57,33 @@
 			}
 			input {
 				flex: 1;
-				height: 100%;
+				height: 35px;
 				border-radius: 5px;
 				border: 2px solid white;
 				background-color: #d3d3d3;
-				padding: 15px 10px;
+				padding: 7px 10px;
 				width: 100%;
 				transition: all 0.15s;
-				font-size: 18px;
+				font-size: 14px;
+				// margin-top: 20px;
 				&:focus {
 					outline: none;
 					border: 2px solid $primary;
 				}
 				@include mq("sm", min) {
+					padding: 7px 45px 7px 10px;
+
+					height: 100%;
 					font-size: 20px;
 					border-radius: 5px 0 0 5px;
 				}
 			}
 			.submit-button {
 				height: 100%;
-				padding: 10px 25px;
+				padding: 10px 20px 10px 25px;
 				color: white;
 				font-weight: bold;
-				font-size: 20px;
+				font-size: 14px;
 				border: none;
 				background-color: $primary;
 				position: relative;
@@ -87,10 +93,35 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				transition: all 0.3s;
+				&:hover {
+					cursor: pointer;
+					background-color: darken($primary, 10%);
+					&:before {
+						border-top-color: transparent;
+						border-left-color: transparent;
+						border-right-color: darken($primary, 10%);
+						border-bottom-color: darken($primary, 10%);
+					}
+				}
+				&:focus {
+					outline: none;
+				}
+				&:active {
+					cursor: pointer;
+					background-color: lighten($primary, 5%);
+					&:before {
+						border-top-color: transparent;
+						border-left-color: transparent;
+						border-right-color: lighten($primary, 5%);
+						border-bottom-color: lighten($primary, 5%);
+					}
+				}
 				@include mq("sm", min) {
 					width: 115px;
 					border-radius: 0 5px 5px 0;
 					padding: 0 25px;
+					font-size: 20px;
 					.submit-chevron {
 						display: none;
 					}
@@ -98,6 +129,7 @@
 						content: "";
 						position: absolute;
 						left: -50px;
+						transition: all 0.3s;
 						top: 0;
 						width: 0;
 						height: 0;
